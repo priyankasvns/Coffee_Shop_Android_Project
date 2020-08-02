@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbarStyle="insideInset"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:text="TheCoffeeShop"
+            android:textAlignment="center"
+            android:textIsSelectable="false"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editTextTextPersonName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="@string/Cust_Name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/autoCompleteTextView"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="Enter your province"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName">
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:inputType="none"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edtdate"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="200dp"
+            android:layout_height="67dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="20dp"
+            android:datePickerMode="calendar"
+            android:ems="10"
+            android:hint="Enter date of purchase"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textViewSelectBev"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="20dp"
+            android:text="Select Beverage:"
+            android:textSize="18sp" />
+
+        <RadioGroup
+            android:id="@+id/rgBeverage"
+            android:layout_width="213dp"
+            android:layout_height="116dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="2dp">
+
+            <RadioButton
+                android:id="@+id/rbTea"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Tea" />
+
+            <RadioButton
+                android:id="@+id/rbCoffee"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Coffee" />
+        </RadioGroup>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="124dp"
+                android:layout_height="130dp"
+                android:layout_marginLeft="143dp"
+                android:layout_marginTop="20dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvtea"
+                    android:layout_width="124dp"
+                    android:layout_height="130dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="124dp"
+                        android:layout_height="130dp"
+                        app:srcCompat="@drawable/bevtea" />
+                </androidx.cardview.widget.CardView>
+
+            </ScrollView>
+
+            <ScrollView
+                android:layout_width="124dp"
+                android:layout_height="130dp"
+                android:layout_marginLeft="143dp"
+                android:layout_marginTop="20dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvcoffee"
+                    android:layout_width="124dp"
+                    android:layout_height="130dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="124dp"
+                        android:layout_height="130dp"
+                        app:srcCompat="@drawable/bevcoffee" />
+                </androidx.cardview.widget.CardView>
+
+            </ScrollView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewSelectsize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="20dp"
+                android:text="Select Size of Beverage:"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spnsize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="250dp"
+                android:layout_marginTop="8dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:text="Select Size of Beverage:"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/cbMilk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="250dp"
+                android:layout_marginTop="20dp"
+                android:text="Milk" />
+
+            <CheckBox
+                android:id="@+id/cbSugar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="320dp"
+                android:layout_marginTop="20dp"
+                android:text="Sugar" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvSelectFlavoring"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="20dp"
+            android:text="Select Flavoring:"
+            android:textSize="18sp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <RadioGroup
+            android:id="@+id/rgFlavoringsCoffee"
+            android:layout_width="213dp"
+            android:layout_height="180dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="4dp"
+            android:visibility="gone">
+
+            <RadioButton
+                android:id="@+id/rbNoneCoffee"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="None" />
+
+            <RadioButton
+                android:id="@+id/rbVanilla"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Vanilla" />
+
+            <RadioButton
+                android:id="@+id/rbChocolate"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Chocolate" />
+        </RadioGroup>
+
+
+
+
+        <RadioGroup
+            android:id="@+id/rgFlavoringsTea"
+            android:layout_width="213dp"
+            android:layout_height="180dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="4dp"
+            android:visibility="gone">
+
+            <RadioButton
+                android:id="@+id/rbNoneTea"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="None" />
+
+            <RadioButton
+                android:id="@+id/rbLemon"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Lemon" />
+
+            <RadioButton
+                android:id="@+id/rbMint"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Mint" />
+        </RadioGroup>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_Manipulate"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="20dp"
+            android:background="#9E7ADD"
+            android:backgroundTint="#9E7ADD"
+            android:onClick="manipulateButton"
+            android:text="Manipulate"
+            android:textColor="#FFEB3B" />
+
+        <!--    <EditText-->
+        <!--        android:id="@+id/editTextTextPersonName"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_marginTop="40dp"-->
+        <!--        android:ems="10"-->
+        <!--        android:inputType="textPersonName"-->
+        <!--        android:hint="Customer Name"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintHorizontal_bias="0.497"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toBottomOf="@+id/textView" />-->
+
+        <!--    <AutoCompleteTextView-->
+        <!--        android:id="@+id/autoCompleteTextView"-->
+        <!--        android:layout_width="206dp"-->
+        <!--        android:layout_height="48dp"-->
+        <!--        android:layout_marginTop="20dp"-->
+        <!--        android:hint="Enter your province"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintHorizontal_bias="0.497"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />-->
+
+        <!--    <EditText-->
+        <!--        android:id="@+id/edtdate"-->
+        <!--        android:layout_width="200dp"-->
+        <!--        android:layout_height="67dp"-->
+        <!--        android:layout_marginLeft="110dp"-->
+        <!--        android:layout_marginTop="20dp"-->
+        <!--        android:ems="10"-->
+        <!--        android:hint="Enter date of purchase" />-->
+
+    </LinearLayout>
+
+
+</ScrollView>
